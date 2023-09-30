@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import styles from '../styles/MenuDrawer.module.css';
+// import styles from '../styles/MenuDrawer.module.css';
 
 interface MenuDrawerProps {
   close: () => void;
@@ -14,8 +14,8 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({ close }) => {
   };
 
   return (
-    <div className={styles.overlay} onClick={close}>
-      <div className={styles.drawer} onClick={e => e.stopPropagation()}>
+    <div onClick={close}>
+      <div onClick={e => e.stopPropagation()}>
         <ul>
           <li onClick={() => navigateTo('/')}>Home</li>
           <li onClick={() => navigateTo('/brand-mission')}>Brand Mission</li>

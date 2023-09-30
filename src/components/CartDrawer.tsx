@@ -1,5 +1,5 @@
 import { useCart } from '../contexts/CartContexts';
-import styles from '../styles/CartDrawer.module.css';
+// import styles from '../styles/CartDrawer.module.css';
 
 interface CartDrawerProps {
   close: () => void;
@@ -9,8 +9,8 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ close }) => {
   const { cart } = useCart();
 
   return (
-    <div className={styles.overlay} onClick={close}>
-      <div className={styles.drawer} onClick={e => e.stopPropagation()}>
+    <div onClick={close}>
+      <div onClick={e => e.stopPropagation()}>
         <h2>Your Cart</h2>
         <ul>
           {cart.map(product => (
