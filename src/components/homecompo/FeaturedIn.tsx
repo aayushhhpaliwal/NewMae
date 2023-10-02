@@ -1,5 +1,5 @@
 // components/LogoSlider.tsx
-'useclient';
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import 'slick-carousel/slick/slick.css';
