@@ -55,6 +55,11 @@ const FeaturedIn: React.FC = () => {
         /* Style for the logo items */
         .slick-slide {
           padding: 0 15px;
+          @media (max-width: 768px) {
+            /* Customize styles for mobile view */
+            .slick-slide {
+              padding: 0 10px;
+            }
         }
 
         /* Style for the logo images */

@@ -1,23 +1,29 @@
-"use client";
+'use client';
 
-import { useState } from 'react';
-import MenuDrawer from './MenuDrawer';
+import React, { useState } from 'react';
+import HamburgerMenu from './HamburgerMenu';
 import CartDrawer from './CartDrawer';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setCartOpen] = useState(false);
 
-  return (
-    <nav>
-      <button onClick={() => setMenuOpen(!isMenuOpen)}>Hamburger</button>
-      <div>Logo</div>
-      <button onClick={() => setCartOpen(!isCartOpen)}>Cart</button>
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
-      {isMenuOpen && <MenuDrawer close={() => setMenuOpen(false)} />}
-      {isCartOpen && <CartDrawer close={() => setCartOpen(false)} />}
-    </nav>
+  const toggleCart = () => {
+    setCartOpen(!isCartOpen);
+  };
+
+  return (
+    <div className="flex justify-between items-center py-4 px-6 bg-gray-900 text-white">
+      <HamburgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <img src="/your-logo.png" alt="Logo" className="w-20 h-20" />
+      <div onClick={toggleCart}>Cart</div>
+      <CartDrawer isOpen={isCartOpen} toggleCart={toggleCart} />
+    </div>
   );
-}
+};
 
 export default Navbar;

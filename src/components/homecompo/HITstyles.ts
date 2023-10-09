@@ -30,6 +30,10 @@ export const TestOne = styled.div`
   flex-direction: column;
   width: 33.3%;
   padding: 30px 0;
+  @media (max-width: 768px) {
+    width: 50%; /* Set width to 100% for screens smaller than 768px */
+  }
+
 `;
 
 export const TestinImg = styled.img`
@@ -50,4 +54,15 @@ export const TestHead = styled.p`
 
 export const TestContent = styled.p`
   text-align: left;
+`;
+
+export const TestOne1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  padding: 30px 0;
+  
+  @media (max-width: 768px) {
+    width: 100%; /* Set width to 100% for screens smaller than 768px */
+  }
 `;

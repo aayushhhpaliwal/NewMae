@@ -1,37 +1,39 @@
-import { useCart } from '../contexts/CartContexts';
-// import styles from '../styles/CartDrawer.module.css';
+import React, { useEffect } from 'react';
 
 interface CartDrawerProps {
-  close: () => void;
+  isOpen: boolean;
+  toggleCart: () => void;
 }
 
-const CartDrawer: React.FC<CartDrawerProps> = ({ close }) => {
-  const { cart } = useCart();
+const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, toggleCart }) => {
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen) {
+        const cart = document.getElementById('cart-drawer');
+        if (cart && !cart.contains(event.target as Node)) {
+          toggleCart();
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, toggleCart]);
 
   return (
-    <div onClick={close}>
-      <div onClick={e => e.stopPropagation()}>
-        <h2>Your Cart</h2>
-        <ul>
-          {cart.map(product => (
-            <li key={product.id}>
-              <span>{product.title}</span>
-              {/* You can add more product details, like price, quantity, etc. */}
-            </li>
-          ))}
-        </ul>
-        {cart.length > 0 ? (
-          <button onClick={() => {
-            // Handle checkout logic here
-          }}>
-            Checkout
-          </button>
-        ) : (
-          <p>Your cart is empty.</p>
-        )}
-      </div>
+    <div
+      id="cart-drawer"
+      className={`${
+        isOpen ? 'block' : 'hidden'
+      } absolute inset-y-0 right-0 w-1/5 h-full bg-gray-900 text-white`}
+    >
+      {/* Add cart content here */}
+      <button onClick={toggleCart}>Close</button>
     </div>
   );
-}
+};
 
 export default CartDrawer;

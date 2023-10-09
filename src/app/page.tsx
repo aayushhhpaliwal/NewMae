@@ -5,6 +5,8 @@ import Navbar from '@/components/NavBar'
 import MugImage from '@/components/homecompo/MugImage'
 import FeaturedIn from '@/components/homecompo/FeaturedIn'
 import HowIsIt from '@/components/homecompo/HowIsIt';
+import Footer
+ from '@/components/Footer';
 
 export default function Home() { 
   return (
@@ -20,6 +22,7 @@ export default function Home() {
     <MugImage />
     <FeaturedIn />
     <HowIsIt />
+    <Footer />
     </div>
    
   )

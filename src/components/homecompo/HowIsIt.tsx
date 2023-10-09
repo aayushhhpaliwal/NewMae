@@ -6,6 +6,7 @@ import {
   HMade,
   ThreeTestimonial,
   TestOne,
+  TestOne1,
   TestinImg,
   Sec50,
   TestHead,
@@ -35,6 +36,7 @@ const HowIsIt: React.FC = () => {
         </TestOne>
 
         {/* Second Testimonial */}
+        
         <TestOne style={{ backgroundColor: '#f5ebe2' }}>
           <TestinImg
             src="https://cdn.shopify.com/s/files/1/0667/8318/3163/files/TheBio-Composite_Icon_79561255-7930-48de-9b7f-df16eabcf8df.png?v=1680584805"
@@ -48,9 +50,9 @@ const HowIsIt: React.FC = () => {
             </TestContent>
           </Sec50>
         </TestOne>
-
+        
         {/* Third Testimonial */}
-        <TestOne style={{ backgroundColor: '#B69580' }}>
+        <TestOne1 style={{ backgroundColor: '#B69580' }}>
           <TestinImg
             src="https://cdn.shopify.com/s/files/1/0667/8318/3163/files/Mug_icon_4737689d-c82c-4d87-80b8-ad0f4ad76c44.png?v=1680583902"
             alt=""
@@ -62,7 +64,7 @@ const HowIsIt: React.FC = () => {
               That are Lightweight & Break Resistant, while also being Microwave /Freezer/ Dishwasher Safe.
             </TestContent>
           </Sec50>
-        </TestOne>
+        </TestOne1>
       </ThreeTestimonial>
     </Container>
   );
