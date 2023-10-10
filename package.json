@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@types/react-slick": "^0.23.10",
+    "@vercel/analytics": "^1.0.2",
+    "@zeit/next-css": "^1.0.2-canary.0",
     "jquery": "^3.7.1",
     "next": "latest",
     "react": "latest",

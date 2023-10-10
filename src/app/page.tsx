@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image'
-import Navbar from '@/components/NavBar'
-import MugImage from '@/components/homecompo/MugImage'
-import FeaturedIn from '@/components/homecompo/FeaturedIn'
-import HowIsIt from '@/components/homecompo/HowIsIt';
-import Footer
- from '@/components/Footer';
+import Navbar from '../components/NavBar'
+import MugImage from '../components/homecompo/MugImage'
+import FeaturedIn from '../components/homecompo//FeaturedIn'
+import HowIsIt from '../components/homecompo/HowIsIt';
+import Footer from '../components/Footer';
+import JourneyComponent from '../components/homecompo/Journey';
 
 export default function Home() { 
   return (
@@ -22,6 +22,7 @@ export default function Home() {
     <MugImage />
     <FeaturedIn />
     <HowIsIt />
+    <JourneyComponent />
     <Footer />
     </div>
    
